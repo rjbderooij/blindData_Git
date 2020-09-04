@@ -8,18 +8,23 @@
 #' @importFrom stats lm runif resid
 #' @importFrom tidyselect all_of
 #'
-### Input:
-# df_original = original dataset (i.e., unblinded)
-# y = dependent variable
-# predictors = predictor variables (a.k.a. independent variables)
-# update_labels = TRUE updates labels from [name] to blind_AB_[name]
-#                 FALSE retains original labels
-#                 defaults to true to clearly indicate a changes to the dataset
+
 
 blindDataRegression_ScramblePredictors <- function(df_original,
                                                    y,
                                                    predictors,
                                                    update_labels = TRUE){
+
+
+  ### Input:
+  # df_original = original dataset (i.e., unblinded)
+  # y = dependent variable
+  # predictors = predictor variables (a.k.a. independent variables)
+  # update_labels = TRUE updates labels from [name] to blind_AB_[name]
+  #                 FALSE retains original labels
+  #                 defaults to true to clearly indicate a changes to the dataset
+
+
 
   # Step 1: Check that there is more than 1 predictor (else no scrambling)
   if(length(predictors) == 1){

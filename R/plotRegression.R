@@ -17,9 +17,9 @@
 #' @param lowesscol = "blue" # color of lowess line
 #' @keywords Average with noise per case, Regression
 #'
-### Output:
-# Blinded dataset with indication in variable names "BLIND_[methodabbreviated]_"
-#
+#'
+#' @export
+
 
 plotRegression <- function(df_original,
                            y,
@@ -35,6 +35,13 @@ plotRegression <- function(df_original,
                            studres_cutoff_max = 2,
                            lowess = TRUE,
                            lowesscol = "blue"){
+
+
+  ### Output:
+  # Blinded dataset with indication in variable names "BLIND_[methodabbreviated]_"
+  #
+
+
 
   # Plot Cooks distance
   if(plot_cooksdistance){
@@ -72,14 +79,14 @@ plotRegression <- function(df_original,
                                                       studres_cutoff_max)}
 } # End plotDataRegression
 
-plotRegression(df_original = df_sim_reg,
-               y = "sickleave",
-               predictors = c("gender",
-                              "general_health",
-                              "stress_at_work",
-                              "var_of_work_ac"),
-               plot_cooksdistance = TRUE,
-               plot_crplot = F,
-               plot_hatvalues = F,
-               plot_qqplot = F,
-               plot_studonfitted = F)
+# plotRegression(df_original = df_sim_reg,
+#                y = "sickleave",
+#                predictors = c("gender",
+#                               "general_health",
+#                               "stress_at_work",
+#                               "var_of_work_ac"),
+#                plot_cooksdistance = TRUE,
+#                plot_crplot = F,
+#                plot_hatvalues = F,
+#                plot_qqplot = F,
+#                plot_studonfitted = F)

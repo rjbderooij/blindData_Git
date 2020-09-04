@@ -11,34 +11,38 @@
 #' @keywords Create New Coefficients, Regression
 #' @importFrom stats lm runif resid
 #'
-### Input:
-# df_original = original dataset (i.e., unblinded)
-# y = dependent variable
-# predictors = predictor variables (a.k.a. independent variables)
-# update_labels = TRUE updates labels from [name] to blind_AB_[name]
-#                 FALSE retains original labels
-#                 defaults to true to clearly indicate a changes to the dataset
-### Output:
-### Output:
-# df_blindCreateNewCoefficients = data.frame with pertubed Y
-#
-### Steps:
-# 1) Save original dataframe with Y as first column
-# 2) Run original linear regression model and save output
-# 3) Clone original dataframe with Y as first column
-# 4) Create New Y:
-#    a) Extract original value of predictor X
-#    b) multiply with random number (runif(1
-# 5) Calculate Y by taking the sum of the biased predictor values and adding
-#    the original residual
-# 6) Maintain new Y, but reset predictors to original values (the new dataframe
-#    now has a pertubed Y with original predictor values
-# 7) Update Y label from: [name] to BLIND_CN_[name] (CN = CreateNewCoefficients)
+
 
 blindDataRegression_CreateNewCoefficients = function(df_original,
                                          y,
                                          predictors,
                                          update_labels = TRUE){
+
+
+  ### Input:
+  # df_original = original dataset (i.e., unblinded)
+  # y = dependent variable
+  # predictors = predictor variables (a.k.a. independent variables)
+  # update_labels = TRUE updates labels from [name] to blind_AB_[name]
+  #                 FALSE retains original labels
+  #                 defaults to true to clearly indicate a changes to the dataset
+  ### Output:
+  ### Output:
+  # df_blindCreateNewCoefficients = data.frame with pertubed Y
+  #
+  ### Steps:
+  # 1) Save original dataframe with Y as first column
+  # 2) Run original linear regression model and save output
+  # 3) Clone original dataframe with Y as first column
+  # 4) Create New Y:
+  #    a) Extract original value of predictor X
+  #    b) multiply with random number (runif(1
+  # 5) Calculate Y by taking the sum of the biased predictor values and adding
+  #    the original residual
+  # 6) Maintain new Y, but reset predictors to original values (the new dataframe
+  #    now has a pertubed Y with original predictor values
+  # 7) Update Y label from: [name] to BLIND_CN_[name] (CN = CreateNewCoefficients)
+
 
   # Step 1: Reorder original dataframe with Y as first column
   df_original = df_original[, c(y, predictors)]

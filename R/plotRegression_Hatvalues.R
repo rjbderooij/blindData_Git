@@ -9,24 +9,26 @@
 #' @importFrom stats lm runif resid hatvalues
 #' @importFrom graphics plot abline text
 #'
-### Output:
-# Hat value plot with numbers indicating the observation indices that
-# exceed the cut-offscore of (1+k)/n
-#
-### Steps:
-# 1) Save original dataframe
-# 2) Run original linear regression model and save output
-# 3) Extractstats::hatvalues
-# 4) Save max hatvalue (for plotting purposes)
-# 5) Calculate cutoff score (1+k)/n
-# 6) Construct the plot
-#
+
 
 plotRegression_Hatvalues <- function(df_original,
                                      y,
                                      predictors,
                                      hat_cutoff_min = 2,
                                      hat_cutoff_max = 3){
+
+  ### Output:
+  # Hat value plot with numbers indicating the observation indices that
+  # exceed the cut-offscore of (1+k)/n
+  #
+  ### Steps:
+  # 1) Save original dataframe
+  # 2) Run original linear regression model and save output
+  # 3) Extractstats::hatvalues
+  # 4) Save max hatvalue (for plotting purposes)
+  # 5) Calculate cutoff score (1+k)/n
+  # 6) Construct the plot
+  #
 
   # Step 1: Save original dataframe with Y as first column
   df_original = df_original[, c(y, predictors)]

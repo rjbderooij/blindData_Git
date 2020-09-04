@@ -8,26 +8,32 @@
 #' @importFrom stats lm runif resid
 #' @importFrom tidyselect all_of
 #'
-### Input:
-# df_original = original dataset (i.e., unblinded)
-# y = dependent variable
-# predictors = predictor variables (a.k.a. independent variables)
-# update_labels = TRUE updates labels from [name] to blind_AB_[name]
-#                 FALSE retains original labels
-#                 defaults to true to clearly indicate a changes to the dataset
-#
-### Output:
-# df_blindCreateNew = data.frame with pertubed Y
-#
-### Steps:
-# 1) Save original dataframe with Y as first column
-# 2) Replace Y with randomly sampled without replacement from Y
-# 3) Update Y label from: [name] to BLIND_SO_[name] (SO = ScrambleOutcome)
+
 
 blindDataRegression_ScrambleOutcome <- function(df_original,
                                                 y,
                                                 predictors,
                                                 update_labels = TRUE){
+
+
+
+  ### Input:
+  # df_original = original dataset (i.e., unblinded)
+  # y = dependent variable
+  # predictors = predictor variables (a.k.a. independent variables)
+  # update_labels = TRUE updates labels from [name] to blind_AB_[name]
+  #                 FALSE retains original labels
+  #                 defaults to true to clearly indicate a changes to the dataset
+  #
+  ### Output:
+  # df_blindCreateNew = data.frame with pertubed Y
+  #
+  ### Steps:
+  # 1) Save original dataframe with Y as first column
+  # 2) Replace Y with randomly sampled without replacement from Y
+  # 3) Update Y label from: [name] to BLIND_SO_[name] (SO = ScrambleOutcome)
+
+
 
   # Step 1: Reorder original dataframe with Y in first column
   df_original = df_original[, c(y, predictors)]

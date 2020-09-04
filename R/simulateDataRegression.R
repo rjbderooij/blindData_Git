@@ -7,28 +7,19 @@
 #' simulates 85 (n = 85) cases. This simulation is made to resemble a dataset
 #' from a psychological study.
 #' @param n # number of cases to simulate
-#' @keywords Average with noise per case, Regression
+#' @keywords Simulate data, Regression
 #' @importFrom stats lm runif resid rbinom
-#'
-### Output:
-# df_sim_reg = n*5 dimensional data.frame with numeric variables in five colums:
-# - sickleave
-# - gender
-# - general_health
-# - stress_at_work
-# - var_of_work_ac
-#
-### Steps:
-# 1) define intercept
-# 2) define slopes
-# 3) simulate random indepdent variable values from binomial or from truncated
-#    normal distribution
-# 4) simulate error values random normal distribution
-# 5) simulate dependent variable scores according to linear model
-# 6) recode impossible values
-# 7) create dataset
+#' @return df_sim_reg = n*5 dimensional data.frame with variables in five colums
+#' - sickleave (numeric)
+#' - gender (binairy)
+#' - general_health (numeric)
+#' - stress_at_work (numeric)
+#' - var_of_work_ac (numeric)
+#' @export
+
 
 simulateDataRegression <- function(n = 85){
+
   # Step1: define intercept
   b0 <- 12
 
@@ -37,9 +28,6 @@ simulateDataRegression <- function(n = 85){
   b2 <- -2
   b3 <-  1.5
   b4 <- -0.5
-
-  # set seed
-  # set.seed(123)
 
   # Step 3: simulate independent variables
   gender         <- stats::rbinom(n = n, size = 1, prob = 0.5)

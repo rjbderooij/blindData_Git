@@ -15,20 +15,13 @@
 #' @keywords Average with noise per case, Regression
 #' @examples
 #' blindDataRegression(
-#' df_original = data.frame(sickleave = 1:10, var1 = 100:110, var2 = 200:210),
-#'                          y = "sickleave",
-#'                          blinding_method = "AverageWithNoisePerCase",
-#'                          predictors = c("var1", "var2"))
+#' df_original = data.frame(sickleave = 0:10, var1 = 100:110, var2 = 200:210),
+#' y = "sickleave",
+#' blinding_method = "AverageWithNoisePerCase",
+#' predictors = c("var1", "var2")
+#' )
 #'
-### Output:
-# Blinded dataset with indication in variable names "BLIND_[methodabbreviated]_"
-#
-### Function assumes:
-# All variables are interval (i.e., no factors or characters)
-# Check for df_original is of class data.frame
-# Check if variables are numeric or logical
-# Check if correct input of blinding method
-
+#' @export
 blindDataRegression = function(df_original,
                                y,
                                predictors,
@@ -38,6 +31,17 @@ blindDataRegression = function(df_original,
                                                    "ScrambleOutcome",
                                                    "ScramblePredictors"),
                                update_labels = TRUE){
+
+
+  ### Output:
+  # Blinded dataset with indication in variable names "BLIND_[methodabbreviated]_"
+  #
+  ### Function assumes:
+  # All variables are interval (i.e., no factors or characters)
+  # Check for df_original is of class data.frame
+  # Check if variables are numeric or logical
+  # Check if correct input of blinding method
+
 
   # Assumptions of the inputs are checked here
   # Errors thrown if problem is found
@@ -120,9 +124,9 @@ blindDataRegression = function(df_original,
 #                                    "stress_at_work",
 #                                    "var_of_work_ac"))
 
-blindDataRegression(
-  df_original = data.frame("sickleave" = 0:10, var1 = 100:110, var2 = 200:210),
-  y = "sickleave",
-  blinding_method = "AverageWithNoisePerCase",
-  predictors = c("var1", "var2")
-  )
+# blindDataRegression(
+#   df_original = data.frame("sickleave" = 0:10, var1 = 100:110, var2 = 200:210),
+#   y = "sickleave",
+#   blinding_method = "AverageWithNoisePerCase",
+#   predictors = c("var1", "var2")
+#   )

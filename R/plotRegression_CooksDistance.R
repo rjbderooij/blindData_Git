@@ -7,21 +7,23 @@
 #' @importFrom stats lm runif resid cooks.distance
 #' @importFrom graphics plot abline text
 #'
-### Output:
-# Cooks distance plot with numbers indicating the observation indices that
-# exceed the cut-offscore of k/(n-k-1)
-#
-### Steps:
-# 1) Run original linear regression model and save output
-# 2) Calculate cooksvalues
-# 3) Calculate max Cook's value (for plotting purposes)
-# 4) Calculate cutoff score (k/(n-k-1))
-# 5) Construct the plot
-#
-
 plotRegression_CooksDistance <- function(df_original,
                                          y,
                                          predictors){
+
+
+  ### Output:
+  # Cooks distance plot with numbers indicating the observation indices that
+  # exceed the cut-offscore of k/(n-k-1)
+  #
+  ### Steps:
+  # 1) Run original linear regression model and save output
+  # 2) Calculate cooksvalues
+  # 3) Calculate max Cook's value (for plotting purposes)
+  # 4) Calculate cutoff score (k/(n-k-1))
+  # 5) Construct the plot
+  #
+
 
   # Step 1: Run original linear regression model to extract cooks-values later
   lm_original <- lm(paste0(y, " ~ ."), data = df_original)

@@ -8,19 +8,21 @@
 #' @importFrom tidyselect all_of
 #' @importFrom car crPlots
 #'
-### Output:
-# Component residual plot (a.k.a. partial residual plot)
-#
-### Steps:
-# 0) Remove ordering of predictors in dataset and scale variables to hide
-#    x-axis values that might reveal norminal or ordinal predictors
-# 1) Run original linear regression model and save output
-# 2) Call crPlots from the "car" package
-#
+
 
 plotRegression_ComponentResidual = function(df_original,
                                             y,
                                             predictors){
+
+  ### Output:
+  # Component residual plot (a.k.a. partial residual plot)
+  #
+  ### Steps:
+  # 0) Remove ordering of predictors in dataset and scale variables to hide
+  #    x-axis values that might reveal norminal or ordinal predictors
+  # 1) Run original linear regression model and save output
+  # 2) Call crPlots from the "car" package
+  #
 
   # Step 0: randomize the variable order and rescale all variables
   df_original = df_original[, c(y, sample(predictors, replace = F))]

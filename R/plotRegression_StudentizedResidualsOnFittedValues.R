@@ -11,16 +11,7 @@
 #' @importFrom stats lm runif resid fitted
 #' @importFrom graphics plot abline lines text
 #'
-### Output:
-# Cooks distance plot with numbers indicating the observation indices that
-# exceed the cut-offscore of k/(n-k-1)
-#
-### Steps:
-# 1) Run original linear regression model and save output
-# 2) Calculate studresvalues
-# 3) Calculate max studresv alues (for plotting purposes)
-# 4) Extract fitted values of linear model
-# 5) Construct the plot
+
 
 plotRegression_StudentizedResidualsOnFittedValues <- function(df_original,
                                                               y,
@@ -29,6 +20,20 @@ plotRegression_StudentizedResidualsOnFittedValues <- function(df_original,
                                                               studres_cutoff_max = 2,
                                                               lowess = TRUE,
                                                               lowesscol = "blue"){
+
+
+  ### Output:
+  # Cooks distance plot with numbers indicating the observation indices that
+  # exceed the cut-offscore of k/(n-k-1)
+  #
+  ### Steps:
+  # 1) Run original linear regression model and save output
+  # 2) Calculate studresvalues
+  # 3) Calculate max studresv alues (for plotting purposes)
+  # 4) Extract fitted values of linear model
+  # 5) Construct the plot
+
+
   # Step 1: Run original linear regression model to extract studres-values later
   lm_original = lm(paste0(y, " ~ ."), data = df_original)
 

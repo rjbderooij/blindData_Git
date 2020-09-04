@@ -16,6 +16,14 @@ simulateDataRegression(n = 85)
 \arguments{
 \item{n}{# number of cases to simulate}
 }
+\value{
+df_sim_reg = n*5 dimensional data.frame with variables in five colums
+- sickleave (numeric)
+- gender (binairy)
+- general_health (numeric)
+- stress_at_work (numeric)
+- var_of_work_ac (numeric)
+}
 \description{
 Suitable for regression:
 The function "simulateDataRegression" simulates correlational data for
@@ -26,9 +34,6 @@ four independent variables "gender", "general_health", "stress_at_work", and
 simulates 85 (n = 85) cases. This simulation is made to resemble a dataset
 from a psychological study.
 }
-\keyword{Average}
 \keyword{Regression}
-\keyword{case,}
-\keyword{noise}
-\keyword{per}
-\keyword{with}
+\keyword{Simulate}
+\keyword{data,}
