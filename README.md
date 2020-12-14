@@ -6,9 +6,11 @@ Main functions are:
 t-test
 - simulateDataTtest
 - blindDataTtest
+
 ANOVA
 - simulateDataAnova
 - blindDataANOVA
+
 Regression
 - simulateDataRegression
 - blindDataRegression
