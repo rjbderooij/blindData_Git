@@ -15,6 +15,7 @@ Linear Regression
 - simulateDataRegression
 - blindDataRegression
 - plotRegression
+
 The helper functions have the same start of their name but have an addition at the end. For example: blindDataRegression_AddBiasToCoefficients
 
 Namespace file is made with: devtools::document()
