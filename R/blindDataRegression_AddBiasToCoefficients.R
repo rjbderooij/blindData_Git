@@ -2,6 +2,7 @@
 #' This function adds bias to coefficients by multiplying the original
 #' coefficient with a random value from a random uniform distribution between
 #' (-2 and +2)
+#' 
 #' @param df_original # original dataframe
 #' @param y # name of dependent variable
 #' @param predictors # name of predictors, for example c("expert", "conflict)

@@ -12,7 +12,7 @@
 #' "ScrambleOutcome",
 #' "ScramblePredictors")
 #' @param update_labels # if TRUE update labels to BLIND_[abbrevation]_[name]
-#' @keywords Average with noise per case, Regression
+#' @keywords blindData, Regression
 #' @examples
 #' blindDataRegression(
 #' df_original = data.frame(sickleave = 0:10, var1 = 100:110, var2 = 200:210),
@@ -22,6 +22,7 @@
 #' )
 #'
 #' @export
+
 blindDataRegression = function(df_original,
                                y,
                                predictors,
@@ -116,17 +117,3 @@ blindDataRegression = function(df_original,
   }
 } # End blindDataRegression
 
-# blindDataRegression(df_original = df_sim_reg,
-#                     y = "sickleave",
-#                     blinding_method = "ScramblePredictors",
-#                     predictors = c("gender",
-#                                    "general_health",
-#                                    "stress_at_work",
-#                                    "var_of_work_ac"))
-
-# blindDataRegression(
-#   df_original = data.frame("sickleave" = 0:10, var1 = 100:110, var2 = 200:210),
-#   y = "sickleave",
-#   blinding_method = "AverageWithNoisePerCase",
-#   predictors = c("var1", "var2")
-#   )

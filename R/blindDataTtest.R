@@ -13,7 +13,7 @@
 #' "ScrambleGroups",
 #' "ScrambleOutcome")
 #' @param update_labels # if TRUE update labels to BLIND_[abbrevation]_[name]
-#' @keywords Average with noise per case, Regression
+#' @keywords blindData, Ttest
 #' @examples
 #' blindDataTtest(
 #' df_original = data.frame(sickleave = 1:10, var1 = as.factor(rep(c(0,1), each = 5))),
@@ -23,6 +23,7 @@
 #' )
 #'
 #' @export
+
 blindDataTtest = function(df_original, 
                           y, 
                           predictor,
