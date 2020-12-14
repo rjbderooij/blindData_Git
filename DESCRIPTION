@@ -21,6 +21,7 @@ Imports:
     jtools,
     msm,
     stats, 
+    tibble,
     tidyverse,
     tidyselect
 License: GPL-3
