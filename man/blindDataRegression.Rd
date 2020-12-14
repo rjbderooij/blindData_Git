@@ -46,9 +46,5 @@ predictors = c("var1", "var2")
 )
 
 }
-\keyword{Average}
 \keyword{Regression}
-\keyword{case,}
-\keyword{noise}
-\keyword{per}
-\keyword{with}
+\keyword{blindData,}

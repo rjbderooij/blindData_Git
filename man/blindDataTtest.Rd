@@ -24,11 +24,12 @@ blindDataTtest(
 
 \item{blinding_method}{# name of blinding method to apply to the dataset
 user can input any of the following blinding methods
-c("AverageWithNoisePerCase",
-"AddBiasToCoefficients",
-"CreateNewCoefficients",
-"ScrambleOutcome",
-"ScramblePredictors")}
+c("AverageWithNoisePerCase", 
+"AverageWithNoisePerGroup",
+"CenterGroups",
+"MaskGroups",
+"ScrambleGroups",
+"ScrambleOutcome")}
 
 \item{update_labels}{# if TRUE update labels to BLIND_[abbrevation]_[name]}
 }
@@ -46,9 +47,5 @@ predictor = "var1"
 )
 
 }
-\keyword{Average}
-\keyword{Regression}
-\keyword{case,}
-\keyword{noise}
-\keyword{per}
-\keyword{with}
+\keyword{Ttest}
+\keyword{blindData,}
