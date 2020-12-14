@@ -3,15 +3,15 @@
 
 Main functions are:
 
-t-test
+Independent samples Student's t-test
 - simulateDataTtest
 - blindDataTtest
 
-ANOVA
+2x2 ANOVA
 - simulateDataAnova
 - blindDataANOVA
 
-Regression
+Linear Regression 
 - simulateDataRegression
 - blindDataRegression
 - plotRegression
