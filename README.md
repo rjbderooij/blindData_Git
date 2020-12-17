@@ -17,7 +17,3 @@ Linear Regression
 - plotRegression
 
 The helper functions have the same start of their name but have an addition at the end. For example: blindDataRegression_AddBiasToCoefficients
-
-Namespace file is made with: devtools::document()
-
-Updating blindData documentation Warning: Version of roxygen2 last used with this package is 7.1.1.9000. You only have version 7.1.0 Loading blindData
